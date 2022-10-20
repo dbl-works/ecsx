@@ -248,6 +248,33 @@
                 }
               }
             }
+          },
+          "siblingContainers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "dependsOn": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "containerName": {
+                  "type": "string",
+                  "description": "Name of the container to wait for before starting this container"
+                },
+                "condition": {
+                  "type": "string",
+                  "description": "Status of the container to wait for before starting this container"
+                }
+              },
+              "required": [
+                "containerName",
+                "condition"
+              ]
+            }
           }
         }
       }
