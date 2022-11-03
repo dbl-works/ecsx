@@ -21,6 +21,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 
+## [0.8.1]
+
+- merged in `upstream/main` after release of [v0.8.0](https://github.com/marcqualie/ecsx/tree/v0.8.0)
+-Add essential and container memory as options [#3](https://github.com/dbl-works/ecsx/pull/3)
+
+
+
 ## [0.8.0-alpha.2]
 
 
