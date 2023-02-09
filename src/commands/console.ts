@@ -17,6 +17,10 @@ export default class ConsoleCommand extends AwsCommand {
       char: 'c',
       required: true,
     }),
+    subnet: Flags.string({
+      char: 's',
+      required: false,
+    }),
   }
 
   static args = [
@@ -30,7 +34,7 @@ export default class ConsoleCommand extends AwsCommand {
   ]
 
   async run() {
-    const { args: { command }, flags: { clusterKey } } = await this.parse(ConsoleCommand)
+    const { args: { command }, flags: { clusterKey, subnet } } = await this.parse(ConsoleCommand)
     const { config, variables } = await this.configWithVariables({
       clusterKey,
     })
@@ -75,6 +79,7 @@ export default class ConsoleCommand extends AwsCommand {
       variables,
       config,
       enableExecuteCommand: true,
+      subnet,
     })
 
     const runTaskResponse = await client.runTask(taskInput)

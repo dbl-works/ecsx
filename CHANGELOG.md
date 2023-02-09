@@ -11,6 +11,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 
+## [0.8.3]
+
+### Added
+- new flag for console command `-s` to allow launching a console task in a public subnet. This replaces the need for either a NAT or a PrivateLink when the web task is in a private subnet.
+
+
 ## [0.8.2]
 
 ### Fixed

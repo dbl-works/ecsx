@@ -11,10 +11,11 @@ interface Params {
   config: Configuration
   alias?: string // Allow custom name, for example when running a console task using existing container
   enableExecuteCommand?: boolean
+  subnet?: string // public/private from user input
 }
 
 export const taskFromConfiguration = (params: Params): RunTaskCommandInput => {
-  const { clusterName, taskName, revision, variables, config, alias, enableExecuteCommand = false } = params
+  const { clusterName, taskName, revision, variables, config, alias, subnet, enableExecuteCommand = false } = params
   const { project, environment, region } = variables
 
   const clusterConfig = findCluster(config, clusterName, region)
@@ -23,7 +24,16 @@ export const taskFromConfiguration = (params: Params): RunTaskCommandInput => {
   }
 
   const taskConfig = config.tasks[taskName]
-  const taskSubnet = taskConfig.subnet
+  let taskSubnet: 'private' | 'public'
+
+  if (subnet === 'public') {
+    taskSubnet = 'public'
+  } else if (subnet === 'private') {
+    taskSubnet = 'private'
+  } else {
+    taskSubnet = taskConfig.subnet
+  }
+
   const subnets = clusterConfig.subnets[taskSubnet]
   const securityGroups = clusterConfig.securityGroups
   const assignPublicIp = taskSubnet === 'public'

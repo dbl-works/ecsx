@@ -28,16 +28,22 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`ecsx config`](#ecsx-config)
-* [`ecsx console [COMMAND]`](#ecsx-console-command)
-* [`ecsx delete TASKNAME`](#ecsx-delete-taskname)
-* [`ecsx deploy TASKNAME`](#ecsx-deploy-taskname)
-* [`ecsx help [COMMAND]`](#ecsx-help-command)
-* [`ecsx list-clusters`](#ecsx-list-clusters)
-* [`ecsx ps`](#ecsx-ps)
-* [`ecsx run TASKNAME`](#ecsx-run-taskname)
-* [`ecsx scale TASKNAME COUNT`](#ecsx-scale-taskname-count)
-* [`ecsx verify-config [CONFIGPATH]`](#ecsx-verify-config-configpath)
+- [ecsx](#ecsx)
+- [Usage](#usage)
+- [Commands](#commands)
+  - [`ecsx config`](#ecsx-config)
+  - [`ecsx console [COMMAND]`](#ecsx-console-command)
+  - [`ecsx delete TASKNAME`](#ecsx-delete-taskname)
+  - [`ecsx deploy TASKNAME`](#ecsx-deploy-taskname)
+  - [`ecsx help [COMMAND]`](#ecsx-help-command)
+  - [`ecsx list-clusters`](#ecsx-list-clusters)
+  - [`ecsx ps`](#ecsx-ps)
+  - [`ecsx run TASKNAME`](#ecsx-run-taskname)
+  - [`ecsx scale TASKNAME COUNT`](#ecsx-scale-taskname-count)
+  - [`ecsx verify-config [CONFIGPATH]`](#ecsx-verify-config-configpath)
+  - [AWS Systems Session Manager](#aws-systems-session-manager)
+    - [MacOS Quick Start](#macos-quick-start)
+  - [Publishing](#publishing)
 
 ## `ecsx config`
 
@@ -67,6 +73,7 @@ USAGE
 OPTIONS
   -c, --clusterKey=clusterKey  (required)
   -h, --help                   Show CLI help.
+  -s,                          pass "public" or "private" to enforce subnet (use public if you do not have a NAT and the web task is in a private subnet).
 ```
 
 _See code: [src/commands/console.ts](https://github.com/marcqualie/ecsx/blob/v0.8.2/src/commands/console.ts)_
@@ -205,7 +212,7 @@ _See code: [src/commands/verify-config.ts](https://github.com/marcqualie/ecsx/bl
 In order to use the `console` command, you need to have [AWS System Session Manager](https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager.html) installed on your local system.
 
 
-### MacOS Quick Start
+### MacOS Quick Start
 
 These commands are taken from the [full documentation](https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html#install-plugin-macos). You can find information on how to install on other platforms there as well.
 
