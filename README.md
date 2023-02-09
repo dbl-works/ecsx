@@ -19,7 +19,7 @@ $ npm install -g ecsx
 $ ecsx COMMAND
 running command...
 $ ecsx (-v|--version|version)
-ecsx/0.8.2 darwin-x64 node-v16.14.2
+ecsx/0.8.2 darwin-x64 node-v18.8.0
 $ ecsx --help [COMMAND]
 USAGE
   $ ecsx COMMAND
@@ -36,7 +36,7 @@ USAGE
 * [`ecsx list-clusters`](#ecsx-list-clusters)
 * [`ecsx ps`](#ecsx-ps)
 * [`ecsx run TASKNAME`](#ecsx-run-taskname)
-* [`ecsx scale TASK COUNT`](#ecsx-scale-task-count)
+* [`ecsx scale TASKNAME COUNT`](#ecsx-scale-taskname-count)
 * [`ecsx verify-config [CONFIGPATH]`](#ecsx-verify-config-configpath)
 
 ## `ecsx config`
@@ -119,7 +119,7 @@ OPTIONS
   -n, --nested-commands  Include all nested commands in the output.
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.1.16/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.1.22/src/commands/help.ts)_
 
 ## `ecsx list-clusters`
 
@@ -168,13 +168,13 @@ OPTIONS
 
 _See code: [src/commands/run.ts](https://github.com/marcqualie/ecsx/blob/v0.8.2/src/commands/run.ts)_
 
-## `ecsx scale TASK COUNT`
+## `ecsx scale TASKNAME COUNT`
 
 Scale services up or down to the desired count
 
 ```
 USAGE
-  $ ecsx scale TASK COUNT
+  $ ecsx scale TASKNAME COUNT
 
 OPTIONS
   -c, --clusterKey=clusterKey  (required)
