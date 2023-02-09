@@ -9,20 +9,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
-### Added
 
-- `ecsx ps` now shows uptime for services
-- `ecsx ps` will now show all clusters by default [#89](https://github.com/marcqualie/ecsx/pull/89)
 
-### Changed
+## [0.8.2]
 
-- `ecsx ps` has improved output formatting for multiple regions/projects [#89](https://github.com/marcqualie/ecsx/pull/89)
-- `ecsx ps` will how hide tasks by default, use `--showTasks` to see them [#89](https://github.com/marcqualie/ecsx/pull/89)
+### Fixed
+
+- Log group is now based on clustername instead of `{project}-{environment}` [#93](https://github.com/marcqualie/ecsx/pull/93)
 
 
 
 ## [0.8.1]
 
+### Fixed
+
+- `ecsx scale` only supported `{project}-{environment}` naming convention [#92](https://github.com/marcqualie/ecsx/pull/92)
 - merged in `upstream/main` after release of [v0.8.0](https://github.com/marcqualie/ecsx/tree/v0.8.0)
 -Add essential and container memory as options [#3](https://github.com/dbl-works/ecsx/pull/3)
 
@@ -39,6 +40,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 
 - Dropped node 14 support #87
+
+
+
+## [0.8.0]
+
+### Added
+
+- Regional cluster support [#71](https://github.com/marcqualie/ecsx/pull/71)
+- Add siblingContainers and dependsOn options to the task definitions [dbl-works/#1](https://github.com/dbl-works/ecsx/pull/1)
+- `ecsx ps` now shows uptime for services [#89](https://github.com/marcqualie/ecsx/pull/89)
+- `ecsx ps` will now show all clusters by default [#89](https://github.com/marcqualie/ecsx/pull/89)
+
+### Changed
+
+- `ecsx ps` has improved output formatting for multiple regions/projects [#89](https://github.com/marcqualie/ecsx/pull/89)
+- `ecsx ps` will how hide tasks by default, use `--showTasks` to see them [#89](https://github.com/marcqualie/ecsx/pull/89)
+
 
 
 
@@ -138,7 +156,7 @@ NOTE: This version has a bug where `envVars` will not populate container env. Co
 
 ## [0.4.0] - 2021-05-25
 
-### Added
+### Added
 
 - Feature: Console command to launch temporary interactive containers.
 
