@@ -19,6 +19,7 @@ export interface ConfigurationTaskDefinition {
   taskRoleArn?: string
   executionRoleArn: string
   subnet: 'public' | 'private'
+  tags?: Tag[]
   service?: boolean
 }
 
@@ -58,6 +59,10 @@ export interface Variables {
 export interface ClusterVariables {
   clusterName?: string
   taskName?: string
+  [key: string]: string | undefined
+}
+
+export interface Tag {
   [key: string]: string | undefined
 }
 
