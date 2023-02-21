@@ -9,6 +9,9 @@ const { ECSX_CONFIG_PATH } = process.env
 // Find a cluster from this configuration
 // It must match exactly on name and region
 export const findCluster = (config: Configuration, clusterName: string, region: string): ConfigurationClusterDefinition | undefined => {
+  console.log('> clusters:', config.clusters)
+  console.log('> region:', region)
+  console.log('> name:', clusterName)
   const cluster = Object.entries(config.clusters).find(([clusterKey, cluster]) => {
     const name = cluster.name || clusterKey
     return name === clusterName && cluster.region === region
