@@ -37,7 +37,6 @@ export const taskFromConfiguration = (params: Params): RunTaskCommandInput => {
   const subnets = clusterConfig.subnets[taskSubnet]
   const securityGroups = clusterConfig.securityGroups
   const assignPublicIp = taskSubnet === 'public'
-  const tags = taskConfig.tags || []
 
   const overrides = (() => {
     if (enableExecuteCommand === false) {
@@ -59,7 +58,6 @@ export const taskFromConfiguration = (params: Params): RunTaskCommandInput => {
     }
   })()
 
-  // https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-ecs/interfaces/runtaskrequest.html
   return {
     cluster: clusterName,
     taskDefinition: `${project}-${taskName}-${environment}:${revision}`,
@@ -67,7 +65,6 @@ export const taskFromConfiguration = (params: Params): RunTaskCommandInput => {
     group: `task:${alias || taskName}`,
     launchType: 'FARGATE',
     enableExecuteCommand,
-    tags,
     networkConfiguration: {
       awsvpcConfiguration: {
         subnets,
