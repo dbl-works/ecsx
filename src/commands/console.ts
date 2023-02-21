@@ -93,8 +93,8 @@ export default class ConsoleCommand extends AwsCommand {
       this.error('Task not not have an arn')
     }
 
-    const dockerTag = consoleTask.containers && consoleTask.containers[0].image
-    this.log('> Image:', dockerTag)
+    // const dockerTag = consoleTask.containers && consoleTask.containers[0].image
+    // this.log('> Image:', dockerTag)
     this.log('> Task:', consoleTask.taskArn)
 
     let taskDetails: Task | undefined = consoleTask
